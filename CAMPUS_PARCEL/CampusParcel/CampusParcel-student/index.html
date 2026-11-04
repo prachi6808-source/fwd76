@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - Home & Dashboard</title>
+    
+    <!-- Link external CSS files -->
+    <link rel="stylesheet" href="../Styles/style.css"> 
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
+</head>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span></h2>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="my-parcel.html">My Parcels</a>
+            <a href="guard-panel.html">Guard Panel</a>
+            <a href="support.html">Help & Support</a>
+        </nav>
+        <div class="user-profile">
+            <button class="btn-logout"
+            onclick="window.location.href='index.html'">
+            Logout
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+            <h1>Welcome to CampusParcel</h1>
+            <p>Secure, transparent, and hassle-free campus delivery tracking.</p>
+        </section>
+
+        <!-- SECTION 1: STUDENT / COLLECTOR DASHBOARD -->
+        <section class="dashboard-section" id="student-view">
+            <div class="section-header">
+                <h2>CampusParcel Dashboard</h2>
+            </div>
+            <br>
+            <br>
+            <br>
+
+
+            <!-- Parcel Status Summary Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Recive</h3>
+                </div>
+                <div class="stat-card">
+                    <h3>Register</h3>
+                </div>
+                <div class="stat-card">
+                    <h3>Secure</h3>
+                </div>
+                <div class="stat-card">
+                    <h3>Collect</h3>
+                </div>
+            </div>
+
+            <br>
+
+
+            <div>
+                <h2 class="Know-how-to">Know how this operates</h2>
+                <h3>Campus Parcel is a Web based application which you can use to collect your parcel in campus securely without any hassle and chances of missing them.</h3>
+                <br>
+                <h3>If you are a guard you can recive the parcels securely by going to Guards page (In the Navigation Pannel) and if you are a student/faculty you can go to the My Parcel page to check or collect you parcel (In the Navigation Pannel) </h3>
+                <br>
+                <h3>For any help or Support you can go to Help and support section.</h3>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
