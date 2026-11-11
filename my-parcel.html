@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - Home & Dashboard</title>
+    
+    <!-- Link external CSS files -->
+    <link rel="stylesheet" href="../Styles/style.css"> 
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span></h2>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="register.html">Register Your Parcel</a>
+            <a href="my-parcel.html">My Parcels</a>
+            <a href="guard-panel.html">Guard Panel</a>
+            <a href="support.html">Help & Support</a>
+        </nav>
+        <div class="user-profile">
+            <span class="user-role">Role: Student/Faculty</span>
+            <button class="btn-logout"
+            onclick="window.location.href='index.html'">
+            Logout
+            </button>        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+            <h1>CampusParcel</h1>
+            <p>Secure, transparent, and hassle-free campus delivery tracking.</p>
+        </section>
+
+        <!-- SECTION 1: STUDENT / COLLECTOR DASHBOARD -->
+        <section class="dashboard-section" id="student-view">
+            <div class="section-header">
+                <h2>Student Parcel Dashboard</h2>
+                <span class="badge badge-info">Logged in as Student</span>
+            </div>
+
+            <br>
+            <br>
+
+
+
+            <!-- Parcel Status Summary Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Pending Parcels</h3>
+                    <p class="stat-number">2</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Collected Parcels</h3>
+                    <p class="stat-number">5</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Storage Rack</h3>
+                    <p class="stat-number">Shelf B-4</p>
+                </div>
+            </div>
+            <br>
+
+            <!-- Recent Parcels Table -->
+            <div class="table-container">
+                <h3>Your Active & Recent Parcels</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parcel ID</th>
+                            <th>Courier / Agent</th>
+                            <th>Received Time</th>
+                            <th>Storage Location</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#CP-9021</td>
+                            <td>Amazon Logistics</td>
+                            <td>Today, 10:30 AM</td>
+                            <td>Block A - Shelf 2</td>
+                            <td><span class="status status-pending">At Main Gate</span></td>
+                            <td><button class="btn-primary">View OTP / Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>#CP-8845</td>
+                            <td>Flipkart Delivery</td>
+                            <td>Yesterday, 04:15 PM</td>
+                            <td>Block A - Shelf 4</td>
+                            <td><span class="status status-success">Collected</span></td>
+                            <td><button class="btn-secondary" disabled>Collected</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

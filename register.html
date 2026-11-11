@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - Home & Dashboard</title>
+    
+    <!-- Link external CSS files -->
+    <link rel="stylesheet" href="../Styles/style.css"> 
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span></h2>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="register.html">Register Your Parcel</a>
+            <a href="my-parcel.html">My Parcels</a>
+            <a href="guard-panel.html">Guard Panel</a>
+            <a href="support.html">Help & Support</a>
+        </nav>
+        <div class="user-profile">
+            <span class="user-role">Role: Student/Faculty</span>
+                <button class="btn-logout"
+                onclick="window.location.href='index.html'">
+                Logout
+                </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+            <h1>CampusParcel</h1>
+            <p>Secure, transparent, and hassle-free campus delivery tracking.</p>
+        </section>
+
+
+        <!-- SECTION 2: GUARD / SECURITY DASHBOARD -->
+        <section class="dashboard-section" id="guard-view">
+            <div class="section-header">
+                <h2>Register Your Parcel Here</h2>
+                <span class="badge badge-warning">Parcel register action</span>
+            </div>
+            <br>
+            <div class="guard-grid">
+                
+                <!-- Action 1: Register New Incoming Parcel -->
+                <div class="card">
+                    <h3>1. Register Incoming Parcel</h3>
+                    <form class="parcel-form">
+                        <div class="form-group">
+                            <label for="student-id">Student Roll / ID Number:</label>
+                            <input type="text" id="student-id" placeholder="e.g., 2026BT01005" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="courier-name">Courier / Delivery Service:</label>
+                            <input type="text" id="courier-name" placeholder="e.g., BlueDart, Amazon" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="storage-loc">Share OTP</label>
+                            <input type="text" id="otp" placeholder="e.g., 224123" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="storage-loc">Any other instructions</label>
+                            <input type="text" id="instructions" placeholder="Write your instructions" required>
+                        </div>
+
+
+                        <button type="button" class="btn-primary">Register & Share OTP</button>
+                    </form>
+                </div>
+
+                <!-- Action 2: Handover Parcel via OTP Verification -->
+                <div class="card">
+                    <h3>2. Parcel from a Friend or Family</h3>
+                    <form class="verify-form">
+                        <div class="form-group">
+                            <label for="parcel-id-input">Enter name of person</label>
+                            <input type="text" id="parcel-id-input" placeholder="e.g., Prachi" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parcel-id-input">Phone number</label>
+                            <input type="text" id="parcel-id-input" placeholder="e.g., +91 **********" required>
+                        </div>
+                        
+
+
+                        <div class="form-group">
+                            <label for="storage-loc">Any other instructions</label>
+                            <input type="text" id="instructions" placeholder="Write your instructions" required>
+                        </div>
+
+
+                        <button type="button" class="btn-success">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

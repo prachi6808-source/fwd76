@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - Help & Support</title>
+    
+    <!-- Link external CSS files -->
+    <link rel="stylesheet" href="../Styles/style.css"> 
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span></h2>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="register.html">Register Your Parcel</a>
+            <a href="my-parcel.html">My Parcels</a>
+            <a href="guard-panel.html">Guard Panel</a>
+            <a href="support.html">Help & Support</a>
+        </nav>
+        <div class="user-profile">
+            <button class="btn-logout" onclick="window.location.href='index.html'">
+                Logout
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+            <h1>Help & Support Center</h1>
+            <p>Submit your feedback or report any issues regarding parcel delivery.</p>
+        </section>
+
+        <!-- HELP & SUPPORT DASHBOARD SECTION -->
+        <section class="dashboard-section" id="support-view">
+            <div class="section-header">
+                <h2>Support Services</h2>
+                <span class="badge badge-warning">User Assistance</span>
+            </div>
+            <br>
+
+            <div class="guard-grid">
+                
+                <!-- Action 1: Register a Complaint -->
+                <div class="card">
+                    <h3>1. Register a Complaint</h3>
+                    <form class="parcel-form">
+                        <div class="form-group">
+                            <label for="complaint-student-id">Student Roll / ID Number:</label>
+                            <input type="text" id="complaint-student-id" placeholder="e.g., 2026BT01005" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parcel-id">Parcel ID (Optional):</label>
+                            <input type="text" id="parcel-id" placeholder="e.g., #CP-9021">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="issue-type">Issue Type:</label>
+                            <select id="issue-type" required>
+                                <option value="">Select an issue category</option>
+                                <option value="missing">Missing / Untraceable Parcel</option>
+                                <option value="damaged">Damaged Parcel</option>
+                                <option value="otp-error">OTP Verification Problem</option>
+                                <option value="other">Other Incident</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="complaint-desc">Complaint Description:</label>
+                            <textarea id="complaint-desc" rows="4" placeholder="Describe your issue in detail..." required></textarea>
+                        </div>
+
+                        <button type="button" class="btn-primary">Submit Complaint</button>
+                    </form>
+                </div>
+
+                <!-- Action 2: Submit System Review & Feedback -->
+                <div class="card">
+                    <h3>2. Submit Feedback & Review</h3>
+                    <form class="verify-form">
+                        <div class="form-group">
+                            <label for="reviewer-name">Your Name / ID:</label>
+                            <input type="text" id="reviewer-name" placeholder="e.g., Alex / 2026BT01005" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user-rating">System Rating:</label>
+                            <select id="user-rating" required>
+                                <option value="5">5 - Excellent</option>
+                                <option value="4">4 - Good</option>
+                                <option value="3">3 - Average</option>
+                                <option value="2">2 - Poor</option>
+                                <option value="1">1 - Very Bad</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedback-comments">Your Comments:</label>
+                            <textarea id="feedback-comments" rows="4" placeholder="Share your experience or suggestion..." required></textarea>
+                        </div>
+
+                        <button type="button" class="btn-success">Submit Feedback</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

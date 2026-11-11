@@ -1,88 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CampusParcel</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - Home & Dashboard</title>
+    
+    <!-- Link external CSS files -->
+    <link rel="stylesheet" href="../Styles/style.css"> 
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>📦 CampusParcel</h1>
-
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">My Parcels</a>
-            <a href="#">Contact</a>
-            <a href="#">Review</a>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span></h2>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="register.html">Register Your Parcel</a>
+            <a href="my-parcel.html">My Parcels</a>
+            <a href="guard-panel.html">Guard Panel</a>
+            <a href="support.html">Help & Support</a>
         </nav>
+        <div class="user-profile">
+
+            <button class="btn-logout"
+            onclick="window.location.href='index.html'">
+            Logout
+            </button>
+        </div>
     </header>
 
-    <section class="welcome">
+    <!-- Main Content Container -->
+    <main class="main-container">
 
-        <h2>Welcome to CampusParcel</h2>
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+            <h1>Welcome to CampusParcel</h1>
+            <p>Secure, transparent, and hassle-free campus delivery tracking.</p>
+        </section>
 
-        <p>
-            Manage and track your parcels safely inside the campus.
-        </p>
+        <!-- SECTION 1: STUDENT / COLLECTOR DASHBOARD -->
+        <section class="dashboard-section" id="student-view">
+            <div class="section-header">
+                <h2>CampusParcel Dashboard</h2>
+            </div>
+            <br>
+            <br>
+            <br>
 
-        <button>View My Parcels</button>
 
-    </section>
+            <!-- Parcel Status Summary Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Recive</h3>
+                </div>
+                <div class="stat-card">
+                    <h3>Register</h3>
+                </div>
+                <div class="stat-card">
+                    <h3>Secure</h3>
+                </div>
+                <div class="stat-card">
+                    <h3>Collect</h3>
+                </div>
+            </div>
 
-    <section class="parcels">
+            <br>
 
-        <h2>My Parcels</h2>
 
-        <div class="parcel">
+            <div>
+                <h2 class="Know-how-to">Know how this operates</h2>
+                <h3>Campus Parcel is a Web based application which you can use to collect your parcel in campus securely without any hassle and chances of missing them.</h3>
+                <br>
+                <h3>If you book a parcel on COD you can either share the OTP to guards via Web App beforehand or during the delivery just by filling a small form on the "Register your Parcel" page. Even if you are getting a parcel from friend or family, you can register it on that page too.
+                </h3>
+                <br>
+                <h3>If you are a guard you can recive the parcels securely by going to Guards "Guard Panel" page and if you are a student/faculty you can go to the "My Parcels" page to check or collect you parcel. </h3>
+                <br>
+                <h3>For any help/support or complaints you can go to "Help & Support" section.</h3>
+            </div>
+        </section>
 
-            <h3>Parcel ID: CP10245</h3>
+    </main>
 
-            <p>Delivery Date: 07 October 2026</p>
-
-            <p>Storage Location: Locker A-12</p>
-
-            <p>Status: <b>Pending Collection</b></p>
-
-            <button>View Details</button>
-
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management.</p>
         </div>
-
-
-        <div class="parcel">
-
-            <h3>Parcel ID: CP10231</h3>
-
-            <p>Delivery Date: 05 October 2026</p>
-
-            <p>Storage Location: Locker B-05</p>
-
-            <p>Status: <b>Collected</b></p>
-
-            <button>View Details</button>
-
-        </div>
-
-    </section>
-
-    <section class="how">
-
-        <h2>How It Works</h2>
-
-        <p>1. Guard receives your parcel.</p>
-
-        <p>2. Parcel is stored safely.</p>
-
-        <p>3. Student verifies using OTP.</p>
-
-        <p>4. Parcel is collected.</p>
-
-    </section>
-
-    <footer>
-
-        <p>© 2026 CampusParcel</p>
-
     </footer>
 
 </body>
