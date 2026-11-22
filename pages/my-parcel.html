@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - My Parcels</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <img class="sau-strip" src="../images/sau-header.png" alt="South Asian University - A University Established by SAARC Nations">
+
+    <header class="navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span></h2>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Dashboard</a>
+            <a href="register.html">Register Your Parcel</a>
+            <a href="my-parcel.html" class="active">My Parcels</a>
+            <a href="support.html">Help &amp; Support</a>
+            <a href="guard-panel.html" class="guard-nav">Guard Login</a>
+        </nav>
+        <div class="user-profile">
+            <span class="user-role">Role: Student/Faculty</span>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="welcome-banner">
+            <h1>My Parcels</h1>
+            <p>Check your parcels and see your OTP to collect them.</p>
+        </section>
+
+        <section class="dashboard-section" id="student-view">
+            <div class="section-header">
+                <h2>Student Parcel Dashboard</h2>
+                <span class="badge badge-info">Student / Faculty</span>
+            </div>
+
+            <!-- Lookup form -->
+            <div class="card" style="margin-bottom: 25px;">
+                <form id="find-form">
+                    <div class="form-group">
+                        <label for="my-roll">Your Roll / ID Number:</label>
+                        <input type="text" id="my-roll" placeholder="e.g., 2026BT01005" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="my-email">Your Email:</label>
+                        <input type="email" id="my-email" pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}" title="Enter a real email address, e.g. name@gmail.com" placeholder="e.g., yourname@gmail.com" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Show My Parcels</button>
+                </form>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Pending Parcels</h3>
+                    <p class="stat-number" id="stat-pending">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Collected Parcels</h3>
+                    <p class="stat-number" id="stat-collected">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Storage Rack</h3>
+                    <p class="stat-number" id="stat-shelf">-</p>
+                </div>
+            </div>
+
+            <div id="details-message" class="message"></div>
+            <br>
+
+            <!-- Results populated dynamically by my-parcel.js -->
+            <div class="table-container">
+                <h3>Your Active &amp; Recent Parcels</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parcel ID</th>
+                            <th>Courier / Agent</th>
+                            <th>Received Time</th>
+                            <th>Storage Location</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="parcel-rows">
+                        <tr><td colspan="6">Enter your Roll / ID number and email above to see your parcels.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management at South Asian University.</p>
+        </div>
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/my-parcel.js"></script>
+</body>
+</html>

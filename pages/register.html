@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - Register Your Parcel</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <img class="sau-strip" src="../images/sau-header.png" alt="South Asian University - A University Established by SAARC Nations">
+
+    <header class="navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span></h2>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Dashboard</a>
+            <a href="register.html" class="active">Register Your Parcel</a>
+            <a href="my-parcel.html">My Parcels</a>
+            <a href="support.html">Help &amp; Support</a>
+            <a href="guard-panel.html" class="guard-nav">Guard Login</a>
+        </nav>
+        <div class="user-profile">
+            <span class="user-role">Role: Student/Faculty</span>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="welcome-banner">
+            <h1>Register Your Parcel</h1>
+            <p>Tell the guards about your parcel before it arrives.</p>
+        </section>
+
+        <section class="dashboard-section" id="register-view">
+            <div class="section-header">
+                <h2>Register Your Parcel Here</h2>
+                <span class="badge badge-warning">Parcel register action</span>
+            </div>
+
+            <div class="guard-grid">
+                <!-- E-commerce / courier order registration -->
+                <div class="card">
+                    <h3>1. Register Incoming Parcel</h3>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="r-name">Student Name:</label>
+                            <input type="text" id="r-name" placeholder="e.g., Yashwardhan Tiwari" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="r-roll">Student Roll / ID Number:</label>
+                            <input type="text" id="r-roll" placeholder="e.g., 2026BT01005" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="r-email">Your Email:</label>
+                            <input type="email" id="r-email" pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}" title="Enter a real email address, e.g. name@gmail.com" placeholder="e.g., yourname@gmail.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="r-phone">Phone Number:</label>
+                            <input type="tel" id="r-phone" pattern="[0-9+ ]{10,15}" title="Enter a valid phone number" placeholder="e.g., +91 9876543210" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="r-courier">Courier / Delivery Service:</label>
+                            <input type="text" id="r-courier" placeholder="e.g., Flipkart, Amazon, BlueDart" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="r-otp">Delivery OTP (from your shopping app):</label>
+                            <input type="text" id="r-otp" maxlength="8" pattern="[A-Za-z0-9]{4,8}" title="Enter the 4 to 8 character OTP from your delivery app" placeholder="e.g., 482913" required>
+                            <p class="hint">Type the OTP you got from Flipkart, Amazon, etc. The guard uses it to collect the parcel from the delivery person.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="r-instructions">Any other instructions (optional)</label>
+                            <input type="text" id="r-instructions" placeholder="Write your instructions">
+                        </div>
+
+                        <button type="submit" id="register-btn" class="btn-primary">Register Parcel</button>
+                    </form>
+                    <div id="register-message" class="message"></div>
+                </div>
+
+                <!-- Personal / peer drop-off registration -->
+                <div class="card">
+                    <h3>2. Parcel from a Friend or Family</h3>
+                    <form id="family-form">
+                        <div class="form-group">
+                            <label for="f-name">Family / Friend Name (who is sending):</label>
+                            <input type="text" id="f-name" placeholder="e.g., Prachi" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="f-phone">Their phone number:</label>
+                            <input type="tel" id="f-phone" pattern="[0-9+ ]{10,15}" title="Enter a valid phone number" placeholder="e.g., +91 9876543210" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="f-student">Student Name (receiver):</label>
+                            <input type="text" id="f-student" placeholder="e.g., Yashwardhan Tiwari" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="f-roll">Student Roll / ID Number:</label>
+                            <input type="text" id="f-roll" placeholder="e.g., 2026BT01005" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="f-email">Your Email:</label>
+                            <input type="email" id="f-email" pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}" title="Enter a real email address, e.g. name@gmail.com" placeholder="e.g., yourname@gmail.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="f-instructions">Any other instructions (optional)</label>
+                            <input type="text" id="f-instructions" placeholder="Write your instructions">
+                        </div>
+
+                        <button type="submit" id="family-btn" class="btn-success">Submit</button>
+                    </form>
+                    <div id="family-message" class="message"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management at South Asian University.</p>
+        </div>
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+</html>

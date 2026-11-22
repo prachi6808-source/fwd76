@@ -1,89 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CampusParcel</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - Home & Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
-
 <body>
+    <img class="sau-strip" src="images/sau-header.png" alt="South Asian University - A University Established by SAARC Nations">
 
-    <header>
-        <h1>📦 CampusParcel</h1>
-
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">My Parcels</a>
-            <a href="#">Contact</a>
-            <a href="#">Review</a>
+    <!-- Main navigation -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span></h2>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="pages/register.html">Register Your Parcel</a>
+            <a href="pages/my-parcel.html">My Parcels</a>
+            <a href="pages/support.html">Help &amp; Support</a>
+            <a href="pages/guard-panel.html" class="guard-nav">Guard Login</a>
         </nav>
     </header>
 
-    <section class="welcome">
+    <main class="main-container">
+        <section class="welcome-banner hero">
+            <h1>Welcome to CampusParcel</h1>
+            <p>Secure, transparent, and hassle-free campus delivery tracking.</p>
+        </section>
 
-        <h2>Welcome to CampusParcel</h2>
+        <!-- Workflow overview & quick links -->
+        <section class="dashboard-section" id="student-view">
+            <div class="section-header">
+                <h2>CampusParcel Dashboard</h2>
+                <span class="badge badge-info">4 simple steps</span>
+            </div>
 
-        <p>
-            Manage and track your parcels safely inside the campus.
-        </p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>1. Receive</h3>
+                    <p>Guard receives your parcel at the gate.</p>
+                </div>
+                <a class="stat-card step-card" href="pages/register.html">
+                    <h3>2. Register</h3>
+                    <p>Register an expected parcel and share your delivery OTP.</p>
+                </a>
+                <div class="stat-card">
+                    <h3>3. Secure</h3>
+                    <p>Guard stores it and emails you a pickup OTP.</p>
+                </div>
+                <a class="stat-card step-card" href="pages/my-parcel.html">
+                    <h3>4. Collect</h3>
+                    <p>Show the pickup OTP to the guard and collect it.</p>
+                </a>
+            </div>
 
-        <button>View My Parcels</button>
+            <div class="about-text">
+                <h2 class="know-how">Know how this operates</h2>
+                <p>CampusParcel is a web based application which you can use to collect your parcel in campus securely, without any hassle and without any chance of missing it.</p>
+                <p>If you order something online (Flipkart, Amazon, etc.) you can register the parcel on the "Register Your Parcel" page and type the delivery OTP your shopping app gave you. The guard sees it and uses it to take the parcel from the delivery person. Parcels coming from a friend or family member can be registered on the same page.</p>
+                <p>When the parcel reaches the gate, the guard stores it and a new pickup OTP is emailed to you. Show that OTP to the guard to collect your parcel. You can check everything on the "My Parcels" page.</p>
+                <p>Guards use the separate "Guard Login" page (PIN protected).</p>
+                <p>For any help, support or complaints you can go to the "Help &amp; Support" section.</p>
+            </div>
+        </section>
 
-    </section>
+        <!-- Campus gallery -->
+        <section class="dashboard-section">
+            <div class="section-header">
+                <h2>Our Campus</h2>
+                <span class="badge badge-info">South Asian University, New Delhi</span>
+            </div>
+            <div class="gallery">
+                <figure>
+                    <img src="images/hostel-block.jpg" alt="Hostel block at South Asian University">
+                    <figcaption>Hostel Block - parcels reach students here</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/academic-block.jpg" alt="Academic building at South Asian University">
+                    <figcaption>Academic Block</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
 
-    <section class="parcels">
-
-        <h2>My Parcels</h2>
-
-        <div class="parcel">
-
-            <h3>Parcel ID: CP10245</h3>
-
-            <p>Delivery Date: 07 October 2026</p>
-
-            <p>Storage Location: Locker A-12</p>
-
-            <p>Status: <b>Pending Collection</b></p>
-
-            <button>View Details</button>
-
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management at South Asian University.</p>
         </div>
-
-
-        <div class="parcel">
-
-            <h3>Parcel ID: CP10231</h3>
-
-            <p>Delivery Date: 05 October 2026</p>
-
-            <p>Storage Location: Locker B-05</p>
-
-            <p>Status: <b>Collected</b></p>
-
-            <button>View Details</button>
-
-        </div>
-
-    </section>
-
-    <section class="how">
-
-        <h2>How It Works</h2>
-
-        <p>1. Guard receives your parcel.</p>
-
-        <p>2. Parcel is stored safely.</p>
-
-        <p>3. Student verifies using OTP.</p>
-
-        <p>4. Parcel is collected.</p>
-
-    </section>
-
-    <footer>
-
-        <p>© 2026 CampusParcel</p>
-
     </footer>
 
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

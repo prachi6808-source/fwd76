@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusParcel - Guard Panel</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <img class="sau-strip" src="../images/sau-header.png" alt="South Asian University - A University Established by SAARC Nations">
+
+    <header class="navbar guard-navbar">
+        <div class="logo-container">
+            <h2>Campus<span>Parcel</span> Guard</h2>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">&larr; Back to main site</a>
+        </nav>
+        <div class="user-profile">
+            <span class="user-role">Role: Guard</span>
+            <button type="button" id="guard-logout" class="btn-logout">Lock</button>
+        </div>
+    </header>
+
+    <!-- PIN gate (toggled via guard-login.js) -->
+    <main class="main-container" id="guard-lock">
+        <div class="card pin-card">
+            <h3>Guard Login</h3>
+            <p>Enter the guard PIN to open the Guard Panel.</p>
+            <form id="pin-form">
+                <div class="form-group">
+                    <label for="pin-input">Guard PIN:</label>
+                    <input type="password" id="pin-input" placeholder="Enter PIN" required>
+                </div>
+                <button type="submit" class="btn-primary">Open Guard Panel</button>
+            </form>
+            <div id="pin-message" class="message"></div>
+        </div>
+    </main>
+
+    <!-- Main guard workspace (hidden until unlocked) -->
+    <main class="main-container" id="guard-content" style="display: none;">
+        <section class="welcome-banner">
+            <h1>Guard Panel</h1>
+            <p>Receive parcels at the gate and hand them over safely with an OTP.</p>
+        </section>
+
+        <div class="card" style="margin-bottom: 25px;">
+            <div class="otp-row">
+                <p id="email-status" style="margin: 0; flex: 1;"></p>
+                <button type="button" id="test-email-btn" class="btn-secondary">Send test email</button>
+            </div>
+            <div id="email-test-message" class="message"></div>
+        </div>
+
+        <section class="dashboard-section" id="guard-view">
+            <div class="section-header">
+                <h2>Security Guard Panel</h2>
+                <span class="badge badge-warning">Gate Entry Actions</span>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Pre-registered</h3>
+                    <p class="stat-number" id="g-stat-pre">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>At Main Gate</h3>
+                    <p class="stat-number" id="g-stat-gate">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Collected</h3>
+                    <p class="stat-number" id="g-stat-done">0</p>
+                </div>
+            </div>
+
+            <div class="guard-grid">
+                <!-- Intake & pickup OTP dispatch -->
+                <div class="card">
+                    <h3>1. Register Parcel &amp; Send OTP</h3>
+                    <p id="linked-note" class="hint"></p>
+                    <form id="guard-register-form">
+                        <div class="form-group">
+                            <label for="g-name">Student / Family-Friend Name:</label>
+                            <input type="text" id="g-name" placeholder="e.g., Yashwardhan Tiwari" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="g-roll">Student Roll / ID Number:</label>
+                            <input type="text" id="g-roll" placeholder="e.g., 2026BT01005" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="g-email">Student Email (OTP is sent here):</label>
+                            <input type="email" id="g-email" pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}" title="Enter a real email address, e.g. name@gmail.com" placeholder="e.g., student@gmail.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="g-courier">Courier / Delivery Service:</label>
+                            <input type="text" id="g-courier" placeholder="e.g., BlueDart, Amazon" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="g-storage">Assigned Storage Shelf / Rack:</label>
+                            <input type="text" id="g-storage" placeholder="e.g., Rack B - Slot 12" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="g-otp">Pickup OTP:</label>
+                            <div class="otp-row">
+                                <input type="text" id="g-otp" readonly>
+                                <button type="button" id="g-generate-btn" class="btn-secondary">Generate OTP</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="g-agent-photo">Agent Delivery Photo:</label>
+                            <input type="file" id="g-agent-photo" accept="image/*" capture="environment">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="g-shelf-photo">Storage Shelf Photo:</label>
+                            <input type="file" id="g-shelf-photo" accept="image/*" capture="environment">
+                        </div>
+
+                        <button type="submit" id="guard-register-btn" class="btn-primary">Register &amp; Send OTP</button>
+                    </form>
+                    <div id="guard-register-message" class="message"></div>
+                </div>
+
+                <!-- Student handover verification -->
+                <div class="card">
+                    <h3>2. Verify &amp; Handover Parcel</h3>
+                    <form id="verify-form">
+                        <div class="form-group">
+                            <label for="v-parcel-id">Enter Parcel ID:</label>
+                            <input type="text" id="v-parcel-id" placeholder="e.g., #CP-9021" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="v-otp">Enter Student's Pickup OTP:</label>
+                            <input type="text" id="v-otp" maxlength="6" pattern="[0-9]{6}" title="Enter exactly 6 digits" placeholder="Enter 6-digit OTP" required>
+                        </div>
+
+                        <button type="submit" class="btn-success">Verify OTP &amp; Mark Collected</button>
+                    </form>
+                    <div id="verify-message" class="message"></div>
+                </div>
+            </div>
+
+            <!-- Incoming pre-registered queue -->
+            <div class="table-container" style="margin-top: 30px;">
+                <h3>Pre-registered Parcels</h3>
+                <p class="hint">Give the Delivery OTP to the delivery person to collect the parcel. Press Receive to fill the form above.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parcel ID</th>
+                            <th>Student</th>
+                            <th>Phone</th>
+                            <th>Courier / From</th>
+                            <th>Delivery OTP</th>
+                            <th>Instructions</th>
+                            <th>Registered</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pre-rows">
+                        <tr><td colspan="8">No pre-registered parcels right now.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CampusParcel System. All Rights Reserved.</p>
+            <p>Designed for Secure Campus Delivery Management at South Asian University.</p>
+        </div>
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/guard-login.js"></script>
+    <script src="../js/guard.js"></script>
+</body>
+</html>
